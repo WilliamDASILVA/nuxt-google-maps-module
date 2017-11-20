@@ -1,0 +1,40 @@
+{
+  "name": "nuxt-google-maps-module",
+  "version": "1.0.0",
+  "description": "NuxtJS module to import Google Maps",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "WilliamDASILVA <william.da.silva@outlook.com>"
+    }
+  ],
+  "main": "lib/module.js",
+  "repository": "https://github.com/WilliamDASILVA/nuxt-google-maps-module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "npm run lint && jest",
+    "release": "standard-version && git push --follow-tags && npm publish"
+  },
+  "eslintIgnore": [
+    "lib/templates/*.*"
+  ],
+  "files": [
+    "lib"
+  ],
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib",
+      "test"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "nuxt-module-builder": "latest"
+  }
+}
