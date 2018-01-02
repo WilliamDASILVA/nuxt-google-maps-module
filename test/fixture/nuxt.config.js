@@ -2,9 +2,9 @@ module.exports = {
   srcDir: __dirname,
   dev: false,
   render: {
-    resourceHints: false
+    resourceHints: false,
   },
   modules: [
-    ['@@', { /* Module options */ }]
-  ]
-}
+    ['@@', { /* Module options */ }],
+  ],
+};

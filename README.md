@@ -2,7 +2,7 @@
 
 [![npm (scoped with tag)](https://img.shields.io/npm/v/nuxt-google-maps-module/latest.svg?style=flat-square)](https://npmjs.com/package/nuxt-google-maps-module)
 [![npm](https://img.shields.io/npm/dt/nuxt-google-maps-module.svg?style=flat-square)](https://npmjs.com/package/nuxt-google-maps-module)
-[![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
+[![js-airbnb-style](https://img.shields.io/badge/code_style-airbnb-brightgreen.svg?style=flat-square)](https://github.com/airbnb/javascript)
 
 > A NuxtJS module to import Google maps script
 
