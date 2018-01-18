@@ -6,15 +6,12 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    jest: true
   },
   extends: [
     'airbnb',
   ],
   plugins: [
-    'jest',
     'vue',
-    'underscore',
   ],
   rules: {
     // Allow paren-less arrow functions
@@ -28,7 +25,5 @@ module.exports = {
     'no-param-reassign': 0,
   },
   globals: {
-    'jest/globals': true,
-    jasmine: true
   }
 }
