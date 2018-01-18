@@ -1,11 +1,14 @@
 <template>
     <div>
-        Works!
+        Vue Google Maps module
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        name: 'home',
+        mounted() {
+            console.log('STARTED')
+        },
+    }
 </script>

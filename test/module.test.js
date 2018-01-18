@@ -2,6 +2,8 @@ import test from 'ava';
 import { Nuxt, Builder } from 'nuxt';
 import { resolve } from 'path';
 
+const port = 4000 || process.env.PORT;
+
 let nuxt;
 let config;
 
@@ -20,7 +22,7 @@ test.before(async (t) => {
 
   nuxt = new Nuxt(config);
   await new Builder(nuxt).build();
-  await nuxt.listen(4000 || process.env.PORT);
+  await nuxt.listen(port);
 });
 
 test.after(async () => {
@@ -29,8 +31,4 @@ test.after(async () => {
 
 test('Render', async (t) => {
   t.pass();
-  // const context = {};
-  // const { html } = nuxt.renderRoute('/', context);
-  // // const html = await get('/');
-  // expect(html).toContain('Works!');
 });
