@@ -1,4 +1,4 @@
-const path = require('path');
+const { resolve } = require('path');
 
 module.exports = function module(moduleOptions) {
   const defaults = {
@@ -10,7 +10,12 @@ module.exports = function module(moduleOptions) {
       'places',
     ],
   };
-  const options = Object.assign({}, defaults, this.options.maps, moduleOptions);
+
+  const options = {
+    ...defaults,
+    ...this.options.maps,
+    ...moduleOptions,
+  };
 
   const libraries = options.libraries.join(',');
 
@@ -22,12 +27,12 @@ module.exports = function module(moduleOptions) {
     });
   }
 
-  process.env['google-maps-module'] = options;
-  console.log('ENV', options);
-
   this.addPlugin({
-    src: path.resolve(__dirname, './templates/plugin.js'),
+    src: resolve(__dirname, './plugin.template.js'),
     ssr: false,
     options,
   });
 };
+
+// eslint-disable-next-line
+module.exports.meta = require(resolve(__dirname, './../package.json'));

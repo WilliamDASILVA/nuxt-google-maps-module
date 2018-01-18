@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 module.exports = {
   srcDir: __dirname,
   dev: false,
@@ -5,6 +7,7 @@ module.exports = {
     resourceHints: false,
   },
   modules: [
-    ['@@', { /* Module options */ }],
+    [resolve(__dirname, './../../dist/module.js'), {
+    }],
   ],
 };
