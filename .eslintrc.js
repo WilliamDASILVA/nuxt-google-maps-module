@@ -8,10 +8,13 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: 'airbnb',
+  extends: [
+    'airbnb',
+  ],
   plugins: [
     'jest',
-    'vue'
+    'vue',
+    'underscore',
   ],
   rules: {
     // Allow paren-less arrow functions
@@ -21,7 +24,7 @@ module.exports = {
     // Allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // Do not allow console.logs etc...
-    'no-console': 0,
+    'no-console': 1,
     'no-param-reassign': 0,
   },
   globals: {

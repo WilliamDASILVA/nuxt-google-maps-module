@@ -14,37 +14,25 @@
     "access": "public"
   },
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src -d dist --copy-files",
     "lint": "eslint src test",
-    "test": "npm run lint && jest",
+    "test": "ava test/*.test.js --serial --verbose",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
-  "eslintIgnore": [
-    "dist/templates/*.*"
-  ],
   "files": [
     "dist"
   ],
-  "jest": {
-    "testEnvironment": "node",
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "src",
-      "test"
-    ]
-  },
   "dependencies": {},
   "devDependencies": {
+    "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.2.0",
+    "babel-preset-stage-3": "^6.24.1",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-jest": "^21.5.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "jest": "^22.0.4",
-    "nuxt": "^1.0.0-rc11",
-    "nuxt-module-builder": "latest",
-    "request-promise-native": "^1.0.5"
+    "nuxt": "^1.1.1",
+    "nuxt-module-builder": "latest"
   }
 }
