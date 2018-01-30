@@ -19,13 +19,11 @@ module.exports = function module(moduleOptions) {
 
   const libraries = options.libraries.join(',');
 
-  if (!options.body) {
-    this.options.head.script.push({
-      src: `//maps.googleapis.com/maps/api/js?key=${options.key}&libraries=${libraries}`,
-      defer: options.defer,
-      async: options.async,
-    });
-  }
+  this.options.head.script.push({
+    src: `//maps.googleapis.com/maps/api/js?key=${options.key}&libraries=${libraries}&callback=initMap`,
+    defer: options.defer,
+    async: options.async,
+  });
 
   this.addPlugin({
     src: resolve(__dirname, './plugin.template.js'),
