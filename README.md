@@ -57,23 +57,7 @@ or even
 
 ## Usage
 
-You can use this module to inject in your components a `$google` instance.
-
-```js
-{
-  modules: [
-    'nuxt-google-maps-module',
-  ],
-  google: {
-    key: 'GOOGLE MAPS KEY',
-    libraries: [
-      'places',
-    ],
-  },
-}
-```
-
-Then you can use it in your components like:
+Once configured in `nuxt.config.js`, you can use it in your components like:
 
 ```js
 {
