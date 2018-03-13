@@ -79,7 +79,7 @@ Then you can use it in your components like:
 {
   ...
   mounted() {
-    const autocomplete = this.$google.maps.places.Autocomplete(inputElement,
+    const autocomplete = new this.$google.maps.places.Autocomplete(inputElement,
       {
         types: ['geocode'],
       },
