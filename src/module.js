@@ -51,7 +51,6 @@ module.exports = function module(moduleOptions) {
    */
   this.addPlugin({
     src: resolve(__dirname, './plugin.template.js'),
-    ssr: false,
     options,
   });
 };
