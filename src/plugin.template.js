@@ -5,7 +5,7 @@ export default function (context, inject) {
    * Inject the Google object in the Nuxt instance, even if it's
    * not used server side.
    */
-  context.app.google = {};
+  Vue['__nuxt_$google_installed__'] = true;
   inject('google', {});
 
   /**
@@ -14,21 +14,18 @@ export default function (context, inject) {
    * Do an event boomerang to make sure the Google maps API callback was
    * called and google injected in Vue.
    */
-  if (process.client && typeof window !== 'undefined') {
+  if (typeof window !== 'undefined') {
     const event = new window.Event('maps-module:initiated');
     window.dispatchEvent(event);
     window.addEventListener('maps-module:loaded', () => {
-      Vue.use(() => {
-        if (!Vue.prototype.hasOwnProperty('$google')) {
-          Object.defineProperty(Vue.prototype, '$google', {
-            get () {
-              return window.google;
-            }
-          })
-        }
+      Object.defineProperty(Vue.prototype, '$google', {
+        get() {
+          if (typeof window !== 'undefined') {
+            return window.google;
+          }
+        },
+        configurable: true,
       });
-
-      context.app.google = window.google;
     });
   }
 }
