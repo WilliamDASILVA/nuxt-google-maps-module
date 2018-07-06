@@ -20,9 +20,7 @@ export default function (context, inject) {
     window.addEventListener('maps-module:loaded', () => {
       Object.defineProperty(Vue.prototype, '$google', {
         get() {
-          if (typeof window !== 'undefined') {
-            return window.google;
-          }
+          return window.google;
         },
         configurable: true,
       });
