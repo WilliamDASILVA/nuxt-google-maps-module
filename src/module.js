@@ -26,10 +26,10 @@ module.exports = function module(moduleOptions) {
   // eslint-disable-next-line
   this.options.head.__dangerouslyDisableSanitizers = ['script'];
   this.options.head.script.push({
-    innerHTML: `window.initMap = () => {
+    innerHTML: `window.initMap = function(){
       window.dispatchEvent(new Event('maps-module:loaded'));
-      window.addEventListener('maps-module:initiated', () => {
-        setTimeout(() => {
+      window.addEventListener('maps-module:initiated', function(){
+        setTimeout(function(){
           window.dispatchEvent(new Event('maps-module:loaded'));
         });
       });
