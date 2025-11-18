@@ -36,7 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "har-validator": "^5.1.0",
     "jsdom": "^11.5.1",
-    "nuxt": "^1.1.1",
+    "nuxt": "^4.2.1",
     "nuxt-module-builder": "latest",
     "qs": "^6.5.1"
   }
